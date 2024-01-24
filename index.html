@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<script src="tlačítka.js"></script>
 <title>Vědomostní Kvíz Jeopardy Template</title>
 <meta name="description" content="Otázka, Otázka" />
 <meta name="ROBOTS" content="NOODP" />
@@ -15,42 +15,7 @@
 <link rel="icon" href="/static/1696687285/favicon.ico" type="image/x-icon" />
 
 
-<script>
 
-var answered = false;
-
-function rightAnswer(button) {
-  button.style.backgroundColor = "green";
-}
-
-function wrongAnswer(button) {
-  button.style.backgroundColor = "red";
-}
-
-function checkAnswer(answer, button) {
-  if (!answered) {
-    var resultParagraph = document.getElementById("demo");
-    answered = true;
-
-    if (answer === "True") {
-      rightAnswer(button);
-    } else {
-      wrongAnswer(button);
-    }
-
-    // Reset the answered variable after a delay (for demonstration purposes)
-    setTimeout(function () {
-      answered = false;
-      resultParagraph.innerHTML = "";
-      resetButtonColor(button);
-    }, 2000); // Reset after 2 seconds (adjust as needed)
-  }
-}
-
-function resetButtonColor(button) {
-  button.style.backgroundColor = "";
-}
-</script>
 
 
 
@@ -494,7 +459,7 @@ h3, .point-cell {
     width: 1000px;
     margin: auto;
     margin: right 10px;
-    border:1px solid rgb(255, 255, 255);
+    border:1px solid rgb(0, 0, 0);
     padding: 0px;
     background-color:#2a3698;
     border-top-left-radius:2px;
@@ -511,7 +476,7 @@ h3, .point-cell {
 }
 
 #teams div.name {
-    border-bottom:2px solid rgb(255, 255, 255);
+    border-bottom:2px solid rgb(0, 0, 0);
     text-align:center;
     color: rgb(255, 255, 255);
     display:grid;
@@ -601,7 +566,7 @@ h3, .point-cell {
 #options select {
     font-size:22px;
     display:inline-block;
-    height:40px;
+    height: 40px;
     -webkit-appearance:menulist-button;
 }
 
@@ -731,7 +696,7 @@ h3, .point-cell {
 }*/
 
 #question-modal .question {
-    border-top: 3px dotted white;
+    border-top: 3px dotted rgb(0, 0, 0);
     margin-top: 10px;
     padding-top: 10px;
 }
@@ -2434,7 +2399,7 @@ function mini(){
         
             <div class="grid-cell " data-row="0" data-col="1">
                 <div class="cell">
-                    <div class="cell-inner cat-cell" role="columnheader">DESKOVKY</div>
+                    <div class="cell-inner cat-cell" role="columnheader">OBECNÉ</div>
                 </div>
             </div>
         
@@ -2452,7 +2417,7 @@ function mini(){
         
             <div class="grid-cell " data-row="0" data-col="4">
                 <div class="cell">
-                    <div class="cell-inner cat-cell" role="columnheader">KOMIKSY</div>
+                    <div class="cell-inner cat-cell" role="columnheader">KNIHY</div>
                 </div>
             </div>
         
@@ -2488,7 +2453,7 @@ function mini(){
     margin: 0 auto;
     width: 100%;
     height: 50%;
-    background-color: #f2f2f2;
+    background-color: #000000;
     border-radius: 10px;
     padding: 20px;
 }
@@ -2496,12 +2461,12 @@ function mini(){
 .button {
     background-color: #000000;
     border: none;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    min-width: 500px;
+    min-width: 600px;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
@@ -2522,10 +2487,10 @@ button:hover {
         <div class="cell-inner" data-category="HRY">100</div>
         <div class="front answer" tabindex="0"><p>Jaká hra vyhrála Game Awards 2023?</p></div>
         <div class="back question" tabindex="0">
-        <button class="button" onclick="checkAnswer('False', this)"id="LondonBtn">Alan Wake 2</button>
-        <button class="button" onclick="checkAnswer('False', this)"id="NewYorkBtn">Super Mario Bros. Wonder</button>
-        <button class="button" onclick="checkAnswer('false', this)"id="ParisBtn">Hogwarts Legacy</button>
-        <button class="button" onclick="checkAnswer('True', this)"id="DublinBtn">Baldur's Gate 3</button></div>
+        <button class="button" onclick="checkAnswer('False', this)"id="LondonBtn">A) Alan Wake 2</button>
+        <button class="button" onclick="checkAnswer('False', this)"id="NewYorkBtn">B) Super Mario Bros. Wonder</button>
+        <button class="button" onclick="checkAnswer('false', this)"id="ParisBtn">C) Hogwarts Legacy</button>
+        <button class="button" onclick="checkAnswer('True', this)"id="DublinBtn">D) Baldur's Gate 3</button></div>
     </div>
                         
                     
@@ -2547,12 +2512,12 @@ button:hover {
                         
                             <div class="cell points" >
                                 <div class="cell-inner" data-category="DESKOVKY">100</div>
-                                <div class="front answer" tabindex="0"><p>Otázka</p></div>
+                                <div class="front answer" tabindex="0"><p>Která země má nejdelší pobřeží na světě?</p></div>
                                 <div class="back question" tabindex="0"><p>
-                                    <button class="button" onclick="checkAnswer('London', this)"id="LondonBtn">London</button>
-                                    <button class="button" onclick="checkAnswer('New York', this)"id="NewYorkBtn">New York</button>
-                                    <button class="button" onclick="checkAnswer('Paris', this)"id="ParisBtn">Paris </button>
-                                    <button class="button" onclick="checkAnswer('Dublin', this)"id="DublinBtn">Dublin</button></div></p>
+                                    <button class="button" onclick="checkAnswer('False', this)"id="LondonBtn">Rusko</button>
+                                    <button class="button" onclick="checkAnswer('False', this)"id="NewYorkBtn">Norsko</button>
+                                    <button class="button" onclick="checkAnswer('True', this)"id="ParisBtn">Kanada</button>
+                                    <button class="button" onclick="checkAnswer('False', this)"id="DublinBtn">Finsko</button></div></p>
                             </div>
                         
                     
@@ -2574,12 +2539,12 @@ button:hover {
                         
                             <div class="cell points" >
                                 <div class="cell-inner" data-category="FILMY">100</div>
-                                <div class="front answer" tabindex="0"><p>Otázka</p></div>
+                                <div class="front answer" tabindex="0"><p>Kolik dílů má filmová série Harry Potter?</p></div>
                                 <div class="back question" tabindex="0"><p>
-                                    <button class="button" onclick="checkAnswer('London', this)"id="LondonBtn">London</button>
-                                    <button class="button" onclick="checkAnswer('New York', this)"id="NewYorkBtn">New York</button>
-                                    <button class="button" onclick="checkAnswer('Paris', this)"id="ParisBtn">Paris </button>
-                                    <button class="button" onclick="checkAnswer('Dublin', this)"id="DublinBtn">Dublin</button></div></p>
+                                    <button class="button" onclick="checkAnswer('false', this)"id="LondonBtn">A) 7</button>
+                                    <button class="button" onclick="checkAnswer('True', this)"id="NewYorkBtn">B) 8</button>
+                                    <button class="button" onclick="checkAnswer('false', this)"id="ParisBtn">C) 9</button>
+                                    <button class="button" onclick="checkAnswer('false', this)"id="DublinBtn">D) 10</button></div></p>
                             </div>
                         
                     
@@ -2601,12 +2566,12 @@ button:hover {
                         
                             <div class="cell points" >
                                 <div class="cell-inner" data-category="SERIÁLY">100</div>
-                                <div class="front answer" tabindex="0"><p>Otázka</p></div>
+                                <div class="front answer" tabindex="0"><p>Jak se jmenuje hlavní postava v seriálu Breaking Bad?</p></div>
                                 <div class="back question" tabindex="0"><p>
-                                    <button class="button" onclick="checkAnswer('London', this)"id="LondonBtn">London</button>
-                                    <button class="button" onclick="checkAnswer('New York', this)"id="NewYorkBtn">New York</button>
-                                    <button class="button" onclick="checkAnswer('Paris', this)"id="ParisBtn">Paris </button>
-                                    <button class="button" onclick="checkAnswer('Dublin', this)"id="DublinBtn">Dublin</button></div></p>
+                                    <button class="button" onclick="checkAnswer('True', this)"id="LondonBtn">A) Walter White</button>
+                                    <button class="button" onclick="checkAnswer('False', this)"id="NewYorkBtn">B) Tony Soprano</button>
+                                    <button class="button" onclick="checkAnswer('False', this)"id="ParisBtn">C) Don Draper</button>
+                                    <button class="button" onclick="checkAnswer('False', this)"id="DublinBtn">D) Rick Grimes</button></div></p>
                             </div>
                         
                     
@@ -2689,12 +2654,12 @@ button:hover {
                         
                             <div class="cell points" >
                                 <div class="cell-inner" data-category="DESKOVKY">200</div>
-                                <div class="front answer" tabindex="0"><p>Otázka</p></div>
+                                <div class="front answer" tabindex="0"><p>Jaká je nejlidnatější země světa?</p></div>
                                 <div class="back question" tabindex="0"><p>
-                                    <button class="button" onclick="checkAnswer('London', this)"id="LondonBtn">London</button>
-                                    <button class="button" onclick="checkAnswer('New York', this)"id="NewYorkBtn">New York</button>
-                                    <button class="button" onclick="checkAnswer('Paris', this)"id="ParisBtn">Paris </button>
-                                    <button class="button" onclick="checkAnswer('Dublin', this)"id="DublinBtn">Dublin</button></div></p>
+                                    <button class="button" onclick="checkAnswer('False', this)"id="LondonBtn">A) USA</button>
+                                    <button class="button" onclick="checkAnswer('False', this)"id="NewYorkBtn">B) Indie</button>
+                                    <button class="button" onclick="checkAnswer('True', this)"id="ParisBtn">C) Čína</button>
+                                    <button class="button" onclick="checkAnswer('False', this)"id="DublinBtn">C) Rusko</button></div></p>
                             </div>
                         
                     
@@ -2716,12 +2681,12 @@ button:hover {
                         
                             <div class="cell points" >
                                 <div class="cell-inner" data-category="FILMY">200</div>
-                                <div class="front answer" tabindex="0"><p>Otázka</p></div>
+                                <div class="front answer" tabindex="0"><p>Jaký film je nejlépe hodnocený film na ČSFD?</p></div>
                                 <div class="back question" tabindex="0"><p>
-                                <button class="button" onclick="checkAnswer('London', this)"id="LondonBtn">London</button>
-                                <button class="button" onclick="checkAnswer('New York', this)"id="NewYorkBtn">New York</button>
-                                <button class="button" onclick="checkAnswer('Paris', this)"id="ParisBtn">Paris </button>
-                                <button class="button" onclick="checkAnswer('Dublin', this)"id="DublinBtn">Dublin</button></div></p>
+                                <button class="button" onclick="checkAnswer('False', this)"id="LondonBtn">A) Barbie</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="NewYorkBtn">B) Oppenheimer</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="ParisBtn">C) Forrest Gump</button>
+                                <button class="button" onclick="checkAnswer('True', this)"id="DublinBtn">D) Vykoupení z věznice Shawshank</button></div></p>
                             </div>
                         
                     
@@ -2743,12 +2708,12 @@ button:hover {
                         
                             <div class="cell points" >
                                 <div class="cell-inner" data-category="SERIÁLY">200</div>
-                                <div class="front answer" tabindex="0"><p>Otázka</p></div>
+                                <div class="front answer" tabindex="0"><p>V které epizodě seriálu Teorie velkého třesku se Penny přistěhovala?</p></div>
                                 <div class="back question" tabindex="0"><p>
-                                <button class="button" onclick="checkAnswer('London', this)"id="LondonBtn">London</button>
-                                <button class="button" onclick="checkAnswer('New York', this)"id="NewYorkBtn">New York</button>
-                                <button class="button" onclick="checkAnswer('Paris', this)"id="ParisBtn">Paris </button>
-                                <button class="button" onclick="checkAnswer('Dublin', this)"id="DublinBtn">Dublin</button></div></p>
+                                <button class="button" onclick="checkAnswer('False', this)"id="LondonBtn">A) 45</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="NewYorkBtn">B) 15</button>
+                                <button class="button" onclick="checkAnswer('True', this)"id="ParisBtn">C) 1</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="DublinBtn">D) 56</button></div></p>
                             </div>
                         
                     
@@ -2804,12 +2769,12 @@ button:hover {
                         
                             <div class="cell points" >
                                 <div class="cell-inner" data-category="HRY">300</div>
-                                <div class="front answer" tabindex="0"><p>Otázka</p></div>
+                                <div class="front answer" tabindex="0"><p>V jaké hře hrajete v centru Prahy za bezdomovce?</p></div>
                                 <div class="back question" tabindex="0"><p>
-                                <button class="button" onclick="checkAnswer('London', this)"id="LondonBtn">London</button>
-                                <button class="button" onclick="checkAnswer('New York', this)"id="NewYorkBtn">New York</button>
-                                <button class="button" onclick="checkAnswer('Paris', this)"id="ParisBtn">Paris </button>
-                                <button class="button" onclick="checkAnswer('Dublin', this)"id="DublinBtn">Dublin</button></div></p>
+                                <button class="button" onclick="checkAnswer('True', this)"id="LondonBtn">A) Hobo: Tough Life</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="NewYorkBtn">B) Bulánci</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="ParisBtn">C) Tough Life of Hobo</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="DublinBtn">D) Don't Starve</button></div></p>
                             </div>
                         
                     
@@ -2831,12 +2796,12 @@ button:hover {
                         
                             <div class="cell points" >
                                 <div class="cell-inner" data-category="DESKOVKY">300</div>
-                                <div class="front answer" tabindex="0"><p>Otázka</p></div>
+                                <div class="front answer" tabindex="0"><p>Jaké je hlavní město Filipín?</p></div>
                                 <div class="back question" tabindex="0"><p>
-                                <button class="button" onclick="checkAnswer('London', this)"id="LondonBtn">London</button>
-                                <button class="button" onclick="checkAnswer('New York', this)"id="NewYorkBtn">New York</button>
-                                <button class="button" onclick="checkAnswer('Paris', this)"id="ParisBtn">Paris </button>
-                                <button class="button" onclick="checkAnswer('Dublin', this)"id="DublinBtn">Dublin</button></div></p>
+                                <button class="button" onclick="checkAnswer('False', this)"id="LondonBtn">A) Marawi</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="NewYorkBtn">B) Jakarta</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="ParisBtn">C) Manilla</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="DublinBtn">D) Rabat</button></div></p>
                             </div>
                         
                     
@@ -2858,12 +2823,12 @@ button:hover {
                         
                             <div class="cell points" >
                                 <div class="cell-inner" data-category="FILMY">300</div>
-                                <div class="front answer" tabindex="0"><p>Otázka</p></div>
+                                <div class="front answer" tabindex="0"><p>Který film režiséra Christophera Nolana je známý svým neobvyklým způsobem vyprávění příběhu zpětně?</p></div>
                                 <div class="back question" tabindex="0"><p>
-                                <button class="button" onclick="checkAnswer('London', this)"id="LondonBtn">London</button>
-                                <button class="button" onclick="checkAnswer('New York', this)"id="NewYorkBtn">New York</button>
-                                <button class="button" onclick="checkAnswer('Paris', this)"id="ParisBtn">Paris </button>
-                                <button class="button" onclick="checkAnswer('Dublin', this)"id="DublinBtn">Dublin</button></div></p>
+                                <button class="button" onclick="checkAnswer('True', this)"id="LondonBtn">A) Inception</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="NewYorkBtn">B) Memento</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="ParisBtn">C) The Dark Knight</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="DublinBtn">D) Dunkirk</button></div></p>
                             </div>
                         
                     
@@ -2885,12 +2850,12 @@ button:hover {
                         
                             <div class="cell points" >
                                 <div class="cell-inner" data-category="SERIÁLY">300</div>
-                                <div class="front answer" tabindex="0"><p>Otázka</p></div>
+                                <div class="front answer" tabindex="0"><p>Jak se jmenuje žena Teda Mosbyho v seriálu How I met your mother?</p></div>
                                 <div class="back question" tabindex="0"><p>
-                                <button class="button" onclick="checkAnswer('London', this)"id="LondonBtn">London</button>
-                                <button class="button" onclick="checkAnswer('New York', this)"id="NewYorkBtn">New York</button>
-                                <button class="button" onclick="checkAnswer('Paris', this)"id="ParisBtn">Paris </button>
-                                <button class="button" onclick="checkAnswer('Dublin', this)"id="DublinBtn">Dublin</button></div>&nbsp;</p>
+                                <button class="button" onclick="checkAnswer('True', this)"id="LondonBtn">A) Tracy McConnell</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="NewYorkBtn">B) Robin Scherbatská</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="ParisBtn">C) Lily Aldrinová</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="DublinBtn">C) Rachel Greenová</button></div>&nbsp;</p>
                             </div>
                         
                     
@@ -2913,10 +2878,11 @@ button:hover {
                             <div class="cell points" >
                                 <div class="cell-inner" data-category="KOMIKSY">300</div>
                                 <div class="front answer" tabindex="0"><p>Otázka</p></div>
-                                <div class="back question" tabindex="0"><p><button class="button" onclick="checkAnswer('London', this)"id="LondonBtn">London</button>
-                                <button class="button" onclick="checkAnswer('New York', this)"id="NewYorkBtn">New York</button>
-                                <button class="button" onclick="checkAnswer('Paris', this)"id="ParisBtn">Paris </button>
-                                <button class="button" onclick="checkAnswer('Dublin', this)"id="DublinBtn">Dublin</button></div></p></div>
+                                <div class="back question" tabindex="0"><p>
+                                <button class="button" onclick="checkAnswer('False', this)"id="LondonBtn">London</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="NewYorkBtn">New York</button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="ParisBtn">Paris </button>
+                                <button class="button" onclick="checkAnswer('False', this)"id="DublinBtn">Dublin</button></div></p></div>
                             </div>
                         
                     
@@ -3022,4 +2988,3 @@ button:hover {
 
 </body>
 </html>
-
