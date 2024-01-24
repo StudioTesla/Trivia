@@ -17,7 +17,41 @@
 
 
 
+<script>
+    var answered = false;
 
+function rightAnswer(button) {
+  button.style.backgroundColor = "green";
+}
+
+function wrongAnswer(button) {
+  button.style.backgroundColor = "red";
+}
+
+function checkAnswer(answer, button) {
+  if (!answered) {
+    var resultParagraph = document.getElementById("demo");
+    answered = true;
+
+    if (answer === "True") {
+      rightAnswer(button);
+    } else {
+      wrongAnswer(button);
+    }
+
+    // Reset the answered variable after a delay (for demonstration purposes)
+    setTimeout(function () {
+      answered = false;
+      resultParagraph.innerHTML = "";
+      resetButtonColor(button);
+    }, 2000); // Reset after 2 seconds (adjust as needed)
+  }
+}
+
+function resetButtonColor(button) {
+  button.style.backgroundColor = "";
+}
+</script>
 
 
     
