@@ -30,7 +30,6 @@ function wrongAnswer(button) {
 function checkAnswer(answer, button) {
   if (!answered) {
     var resultParagraph = document.getElementById("demo");
-    answered = true;
 
     if (answer === "True") {
       rightAnswer(button);
@@ -38,7 +37,7 @@ function checkAnswer(answer, button) {
       wrongAnswer(button);
     }
 
-    // Reset the answered variable after a delay (for demonstration purposes)
+    /* Reset the answered variable after a delay (for demonstration purposes)
     setTimeout(function () {
       answered = false;
       resultParagraph.innerHTML = "";
@@ -49,7 +48,7 @@ function checkAnswer(answer, button) {
 
 function resetButtonColor(button) {
   button.style.backgroundColor = "";
-}
+}*/
 </script>
 
 
